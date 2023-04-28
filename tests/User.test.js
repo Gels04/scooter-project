@@ -19,7 +19,7 @@ describe("the User class has the correct properitites", () => {
         expect(jelly.password).toBe("TrueJellybean");
     })
     test("User has an age", () => {
-        expect(jelly.age).toBe("500");
+        expect(jelly.age).toBe(500);
     })
     test("User is NOT logged in when they register (create an object from User class)", () => {
         expect(jelly.loggedIn).toBe(false);
@@ -28,14 +28,16 @@ describe("the User class has the correct properitites", () => {
 
 describe("User methods working appropriately", () => {
     test("when User logs in correctly, User is logged 'in'", () => {
-        expect(jelly.login("TrueJellybean")).toBe(jelly.loggedIn = true);
+        jelly.login("TrueJellybean")
+        expect(jelly.loggedIn).toBe(true);
     })
     test("when User logs in incorrectly, login(password) throws an Error", () => {
         expect(() => {
             jelly.login("truejellybean")}).toThrow("Error: incorrect password");
     })
     test("when User logs out, User is logged 'out'", () => {
-        expect(jelly.logout()).toBe(jelly.loggedIn = false);
+        jelly.logout()
+        expect(jelly.loggedIn).toBe(false);
     })
 })
 // User tests here

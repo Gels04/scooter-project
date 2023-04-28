@@ -1,8 +1,8 @@
 ```mermaid
 classDiagram
 
-    ScooterApp <|-- Scooter
-    ScooterApp <|-- User
+    Scooter <|-- ScooterApp
+    User <|-- ScooterApp
 
   class Scooter {
     +String station
